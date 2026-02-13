@@ -321,12 +321,21 @@ body::after {
 }
 
 /* Mobile/Tablet: Use contain to show FULL image within the full screen area */
+/* Mobile/Tablet: Auto height to show full image naturally */
 @media (max-width: 991.98px) {
   .carousel-image {
-    object-fit: contain;
-    /* Shows full image without cropping */
-    background: #000;
-    /* Black bars fill the rest of the 100vh space */
+    height: auto !important;
+    min-height: 250px;
+    object-fit: cover;
+    /* Ensure it fills width */
+  }
+
+  /* Adjust carousel height to content */
+  #heroCarousel,
+  .carousel-inner,
+  .carousel-item {
+    height: auto !important;
+    min-height: 250px;
   }
 }
 
